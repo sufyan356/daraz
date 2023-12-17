@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.navbarCustom{
+   
+}
+.container-wrapper{
+    background-color: #F85606;
+}
+#daraz-logo{
+    height: 3rem!important;
+}
+#input-search{
+    width: 20rem;
+}
+
+#login{
+    display: flex!important;
+    align-items: center;
+    justify-content: space-between;
+    width: 5rem!important;
+}
+.fa-solid.icons,
+#login,
+#signUp{
+    color: white!important;
+    cursor: pointer;
+}
+
+#login:hover,
+#signUp:hover{
+    background-color:  white!important;
+    border-radius: 3rem;
+    color:  #F85606!important;
+    
+}
+.nav-item{
+    color: white!important;
+}
+
+ #ul{
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/* sliders  */
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  height: 63vh !important;
+}
+#slider-container-child{
+  height: 63vh !important;
+}
+ 
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.slider-active {
+  background-color: #717171!important;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+#slider-container{
+    /* width: 60%; */
+    margin-left: auto;
+    z-index: 100;
+}
+
+/* HOVER SLIDER  */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    /* width: 10rem; */
+    height: 300px;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current "tab button" class */
+  .tab button.slider-active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none;
+    z-index: 1!important;
+
+  }
+  
+  /* Clear floats after the tab */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  @media(max-width:992px){
+
+    .navText {
+        display: flex!important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        /* border: 1px solid red; */
+        align-items: center;
+        justify-content: center;
+    }
+    .navLinks{
+        /* border: 1px solid rgb(255, 255, 255); */
+        display: flex!important;
+        justify-content: space-evenly;
+        border-radius: 5rem;
+        width: 7rem;
+        font-size: 1.5rem!important;
+        display: flex!important;
+        justify-content: space-evenly;
+        width: 7rem!important;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+    }
+  }
+  @media(max-width:767px){
+    #input-search{
+        width: 13rem!important;
+    }
+  }
+  @media(max-width:850px){
+    #categories{
+        display: none!important;
+    }
+    #loader{
+      width: 100%!important;
+    }
+  }
+
+  .tab{
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  #customImage{
+    height: 5.5rem;
+    width: 100%!important;
+    object-fit: contain;
+  }
+  #customHeading{
+    /* width: 14rem!important; */
+    width: 9rem!important;
+    font-size: 0.8rem;
+    padding: 0rem!important;
+  }
+  .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-body{
+    width: 100%!important;
+  }
+  #addToCartBtn{
+    padding: 0.5rem!important;
+    font-size: 0.5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cartContainer{
+    width: 6rem;
+    display: flex!important;
+    justify-content: center;
+    /* border: 1px solid red; */
+    align-items: end;
+    height: 3rem 
+  }
+  #Quantity{
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    width: 8.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #quantityContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  
