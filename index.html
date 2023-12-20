@@ -63,8 +63,18 @@
     </div>
 
     <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-success" role="alert" id="success">
+            Items Add Successfully!..
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid" id="leftPart">
         <div class="row">
-            <div class="col-sm-5" id="categories">
+            <div class="col-sm-3" id="categories">
                 <div class="tab">
                     
                     <!-- <button class="tablinks" onmouseover="openCity(event, 'Paris')">Paris</button>
@@ -89,30 +99,30 @@
                 <div class="clearfix"></div>
             </div>
             
-            <div class="col-sm-7 " id="loader">
+            <div class="col-sm-9 " id="loader">
                 <section id="slider-container">
                     <div class="slideshow-container" id="slider-container-child">
             
                         <div class="mySlides fade">
-                            <img src="https://icms-image.slatic.net/images/ims-web/ba384e6d-482a-48d5-8465-9a79f5cdddf6.jpg" style="width:100%; height:68vh;">
+                            <img src="https://icms-image.slatic.net/images/ims-web/ba384e6d-482a-48d5-8465-9a79f5cdddf6.jpg" style="width:100%; height:60vh; object-fit: contain;">
                         </div>
                         
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/0d565820-6e9c-4ad2-96c2-769cf2b905b1.jpg" style="width:100%; height:68vh;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/0d565820-6e9c-4ad2-96c2-769cf2b905b1.jpg" style="width:100%; height:60vh; object-fit: contain;">
                         </div>
                         
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/fef3ca74-ada4-4123-aed0-7d7e63366c5f.jpg" style="width:100%; height:68vh;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/fef3ca74-ada4-4123-aed0-7d7e63366c5f.jpg" style="width:100%; height:60vh; object-fit: contain;">
                         </div>
             
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/342fcdb8-9631-4244-ba3b-876fe9522c72.jpg" style="width:100%; height:68vh;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/342fcdb8-9631-4244-ba3b-876fe9522c72.jpg" style="width:100%; height:60vh; object-fit: contain;">
                         </div>
                         <div class="mySlides fade">
-                        <img src="	https://icms-image.slatic.net/images/ims-web/705c6840-125a-40c1-992d-99a13428fe02.png_1200x1200.jpg" style="width:100%; height:68vh;">
+                        <img src="	https://icms-image.slatic.net/images/ims-web/705c6840-125a-40c1-992d-99a13428fe02.png_1200x1200.jpg" style="width:100%; height:60vh; object-fit: contain;">
                         </div>
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/885fe378-9abb-4361-b489-134333646d0d.jpg" style="width:100%; height:68vh;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/885fe378-9abb-4361-b489-134333646d0d.jpg" style="width:100%; height:60vh; object-fit: contain;">
                         </div>
                         
                         </div>
@@ -132,7 +142,7 @@
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="rightPart">
         <div class="row">
             <div class="col">
                 <img src="https://blogpakistan.pk/wp-content/uploads/2022/12/35317112-d5a3-4e6e-aadf-54049041eddc_PK-1920-502-1-1024x268.jpg" alt="daraz-12 12 sale" style="width: 100%;">
@@ -165,7 +175,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form> -->
     <script type = "module" src="app.js"></script>
-    <script  src="addToCart.js"></script>
+    <script type = "module" src="productDescription.js"></script>
+    <!-- <script  src="addToCart.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
