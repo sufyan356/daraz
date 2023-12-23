@@ -11,13 +11,110 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+function getData(){
+  setTimeout( async() => {
 
+    // const querySnapshot = await getDocs(collection(db, "Products"));
+    // querySnapshot.docs.forEach((ele) => {
+    //   productID = ele.data().productData.id
+      showProducts();
+    // })
 
-async function abc () {
-  const querySnapshot = await getDocs(collection(db, "productDetails"));
-  querySnapshot.forEach((products) => {
-   console.log(products.data().productID)
-
-  })
+   
+  },3000)
 }
-abc()
+
+
+const showProducts = async () => {
+ console.log("prodID")
+  
+  let productID;
+  let productDes = document.querySelector("#productDes")
+  let productTitle = document.querySelector("#productTitle")
+
+  let imagePhoto = document.querySelector("#imagePhoto")
+  let quantityBox = document.querySelector(".quantityBox")
+  let buttonGrp = document.querySelector(".buttonGrp")
+  let updateQuantity = document.querySelector(".updateQuantity")
+  updateQuantity.innerHTML = `
+  <span id=""><i class="fa-solid fa-plus updateIcons" ></i></span>
+  <span id="productNumbers">100</span>
+  <span id=""><i class="fa-solid fa-minus updateIcons" ></i></span>
+  
+  `
+
+  const docRef = await getDocs(collection(db, "productDetails"));
+  docRef.docs.forEach(element => {
+    productID = element.data().productID
+  });
+  
+  try{
+    const querySnapshot = await getDocs(collection(db, "Products"));
+    querySnapshot.docs.filter((data) => {
+      if(data.id == productID){
+
+        imagePhoto.classList.add("show")
+        quantityBox.classList.add("show_1")
+        buttonGrp.classList.add("show_2")
+
+        imagePhoto.src = data.data().productData.image
+        productTitle.innerHTML = `${data.data().productData.title}`
+        productDes.innerHTML = `${data.data().productData.description}`
+      }
+    })
+  }
+  catch(error){
+    console.log(error.code)
+    console.log(error.message)
+  }
+}
+window.addEventListener("DOMContentLoaded" , getData);
+
+
+
+
+
+
+
+
+
+
+
+// let quantity = 0
+// let productID;
+// let docRef;
+// const numberIncremet = (productData , quantityData) => {
+
+
+//   // data.docs.forEach((ele) => {
+//   //   productID = ele.data().productData.id
+//   //   console.log(productID)
+//   // })
+// }
+
+
+// let increment = document.querySelector("#increment");
+// if(increment){
+//   increment.addEventListener("click" , incrementFun);
+//   const incrementFun = async () => {
+//     console.log("Increment Function!..");
+   
+//     quantity++;
+   
+//     docRef = await addDoc(collection(db, "updatedProduct"), {
+//       quantity
+//     });
+  
+//     numberIncremet(docRef)
+    
+    
+//     console.log(productID)
+//     quantity++
+//     console.log(quantity)
+//     // const docRef = await addDoc(collection(db, "Products"), {
+//     //   productData
+//     // });
+  
+//   }
+// }
+

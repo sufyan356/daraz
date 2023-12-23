@@ -9,12 +9,88 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div class="container-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container">
+                          <a class="navbar-brand" href="#">
+                            <img id="daraz-logo" src="https://icms-image.slatic.net/images/ims-web/e650d6ca-1841-4646-b0e9-4ddbf2beb731.png" alt="daraz-logo">
+                          </a>
+                           <!-- form  -->
+                           <form class="d-flex" role="search">
+                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input-search">
+                           </form>
+
+                           <!-- add to cart  -->
+                           <button type="button" class="btn  position-relative">
+                            <i class="fa-solid fa-cart-shopping icons "></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id = "basketData">
+                              0
+                              <span class="visually-hidden">Products</span>
+                            </span>
+                          </button>
+
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          
+
+                            <!-- nav items  -->
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ul">
+                              <li class="nav-item navText">
+                                <a class="nav-link active navLinks" aria-current="page" href="#" id="login"><i class="fa-solid fa-user icons" ></i> Login</a>
+                              </li>
+                              <li class="nav-item navText">
+                                <a class="nav-link navLinks" href="#" id="signUp"> Sign Up</a>
+                              </li>
+                              
+                              <!-- <li class="nav-item navText">
+                                
+                              </li> -->
+                            </ul>
+                           
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
-                <!-- <img src="" alt="image-photo" id="imagePhoto"> -->
-               
+            <div class="col-sm-6" style="border: 1px solid red; margin-top: 3rem; height: 70vh;">
+                <img  alt="image-photo" id="imagePhoto" class="img-fluid">
             </div>
+
+            <div class="col-sm-6" style="border: 1px solid red; margin-top: 3rem; height: 70vh;" >
+                <p id="productTitle"> </p>
+                <p id="productDes"> </p>
+                <div class="quantityBox">
+                    <div class="quantityText">
+                        <p id="Quantity"> Quantity</p>
+                    </div>
+                    
+                    <div class="updateQuantity">
+                       
+                    </div>
+                    
+                </div>
+                <div class="buttonGrp">
+                    <button type="submit" class="btn btn-primary " id = "Buy_Now">Buy Now</button>
+                    <button type="submit" class="btn btn-primary " id = "Add_To_Cart">Add To Cart</button>
+                </div>
+                
+            </div>
+            <!-- <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary">Add To Cart</button>
+            </div> -->
         </div>
     </div>
     

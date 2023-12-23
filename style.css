@@ -336,6 +336,124 @@ to {opacity: 1}
   top: 0!important;
   z-index: 1000;
 }
+#imagePhoto{
+  display: none;
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+#productTitle{
+  margin-top: 2rem;
+  font-weight: 900;
+}
+#productDes{
+  margin-top: 2rem;
+}
+.quantityBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  position: relative;
+  top: 25%;
+}
+.buttonGrp{
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 25%;
+}
+#Buy_Now{
+  color: white;
+  background-color: #26ABD4;
+  width: 40%;
+  box-shadow: none!important;
+  border: none!important;
+}
+#Add_To_Cart{
+  color: white;
+  background-color:#D0611E;
+  width: 40%;
+  box-shadow: none!important;
+  border: none!important;
+}
+
+/* #Quantity{
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  height: 100%;
+} */
+
+
+.updateQuantity{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+.quantityText{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#productNumbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#increment,#decrement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.fa-solid.updateIcons{
+  font-size: 2rem;
+}
+#increment{
+ text-align: right;
+}
+#decrement{
+ text-align: left;
+}
+#producrDescriptionBox{
+  display: none;
+}
+.quantityBox{
+  display: none;
+}
+.buttonGrp{
+  display: none;
+}
 .show{
   display: block!important;
 }
+.show_1{
+  display: block!important;
+  display: flex!important;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  position: relative;
+  top: 25%;
+}
+.show_2{
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 25%;
+}
+
+
+
+
+
+
+
+
+/* .show_2{
+  display: block!important;
+} */
