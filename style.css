@@ -239,6 +239,9 @@ to {opacity: 1}
   border: 0rem!important;
  
 }
+ #cardMini{
+  
+ }
 #productDetails{
   width: 70%;
   /* margin-top: 2; */
@@ -349,6 +352,9 @@ to {opacity: 1}
 }
 #productDes{
   margin-top: 2rem;
+  max-height: 73%!important;
+  border: 1px solid green!important;
+  overflow-y: auto;
 }
 .quantityBox{
   display: flex;
@@ -446,6 +452,21 @@ to {opacity: 1}
   position: relative;
   top: 25%;
 }
+#Buy_Now{
+  margin-top: 40%;
+}
+#cartsImage{
+  width: 30%!important;
+  height: 30%!important;
+  /* border-radius: 100%!important; */
+  padding-top: 1rem;
+}
+#shopCards{
+  /* width: 100%!important; */
+  border: 1px solid green!important;
+  margin-bottom: 2rem;
+}
+
 
 
 

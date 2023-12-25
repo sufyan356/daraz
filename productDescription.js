@@ -9,6 +9,8 @@ const firebaseConfig = {
   appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
 };
 
+
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 function getData(){
@@ -24,10 +26,31 @@ function getData(){
   },3000)
 }
 
+const basketData_2 = document.querySelector("#basketData_2");
+if(basketData_2){
+ 
+  const productCarts = () => {
+    location.href = "productCarts.html"
+  }
+  basketData_2.addEventListener("click" , productCarts);
+}
+
+async function basket_2() {
+  // console.log("Basket Function Run!..");
+ 
+  const querySnapshot = await getDocs(collection(db, "Quantity"));
+
+  const totalQuantity = querySnapshot.docs
+    .map((doc) => doc.data().quantity)
+    .reduce((accumulator, currentQuantity) => accumulator + currentQuantity, 0);
+
+    basketData_2.innerHTML = totalQuantity;
+}
+window.addEventListener("DOMContentLoaded", basket_2);
+
+
 
 const showProducts = async () => {
- console.log("prodID")
-  
   let productID;
   let productDes = document.querySelector("#productDes")
   let productTitle = document.querySelector("#productTitle")
@@ -36,31 +59,27 @@ const showProducts = async () => {
   let quantityBox = document.querySelector(".quantityBox")
   let buttonGrp = document.querySelector(".buttonGrp")
   let updateQuantity = document.querySelector(".updateQuantity")
-  updateQuantity.innerHTML = `
-  <span id=""><i class="fa-solid fa-plus updateIcons" ></i></span>
-  <span id="productNumbers">100</span>
-  <span id=""><i class="fa-solid fa-minus updateIcons" ></i></span>
-  
-  `
 
   const docRef = await getDocs(collection(db, "productDetails"));
   docRef.docs.forEach(element => {
     productID = element.data().productID
   });
-  
+
   try{
     const querySnapshot = await getDocs(collection(db, "Products"));
     querySnapshot.docs.filter((data) => {
+      
       if(data.id == productID){
-
         imagePhoto.classList.add("show")
         quantityBox.classList.add("show_1")
         buttonGrp.classList.add("show_2")
-
+        // console.log("data.data().productData.title")
         imagePhoto.src = data.data().productData.image
         productTitle.innerHTML = `${data.data().productData.title}`
         productDes.innerHTML = `${data.data().productData.description}`
       }
+      
+       
     })
   }
   catch(error){
@@ -69,16 +88,6 @@ const showProducts = async () => {
   }
 }
 window.addEventListener("DOMContentLoaded" , getData);
-
-
-
-
-
-
-
-
-
-
 
 // let quantity = 0
 // let productID;
