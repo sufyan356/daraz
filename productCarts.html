@@ -11,14 +11,34 @@
 <body>
     
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card" style="width: 100%;">
-                    <div id="cardMini">
-                        
+        <div class="row"> 
+            <div class="col-sm-6 shadow p-3 mb-5 bg-body rounded mt-5" id="leftcart">
+                <div class="card " style="width: 100%;" id="cardMiniContainer">
+                    <div id="cardMini" class="">
                     </div>
-                    
                 </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="card " style="width: 20rem; margin-left: auto;">
+                    <div class="card-body shadow p-3 mb-5 bg-body rounded" id="cardBodyVoucher">
+                      <h5 class="card-title orderSummaryHeading">Order Summary</h5>
+                      <div class="subTotalContainer">
+                        <small>SubTotal:</small>
+                        <span class="RSforTotal">Rs: <span id="subTotalID">00</span></span>
+                      </div>
+                     
+                      <form class="d-flex" role="search" id="voucherForm">
+                        <input class="form-control me-2" type="search" placeholder="Enter Voucher Code" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Apply</button>
+                      </form>
+                      <div class="totalContainer">
+                        <span>Total: </span>
+                        <span class="RSforTotal">RS: <span id="totalID">00</span></span>
+                      </div>
+                     
+                      <button class="btn btn-outline-success" type="submit" id="searchBtn">Proceed To Check Out</button>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>

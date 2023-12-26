@@ -259,14 +259,27 @@ to {opacity: 1}
   width: 100%!important;
   border: 1px solid grey;
   border-radius: 0.5rem;
-  margin-top: 8rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  
-  /* margin-bottom: 8rem; */
+  /* margin-bottom: 3rem!important; */
+  margin-top: 8rem;
 }
+.cardsBody{
+  width: 100%!important;
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-top: 0rem!important;
+}
+.RSforTotal{
+  font-weight: 800;
+}
+  
 #addToCartBtn{
   padding: 0.5rem!important;
   font-size: 0.5rem;
@@ -453,28 +466,65 @@ to {opacity: 1}
   top: 25%;
 }
 #Buy_Now{
-  margin-top: 40%;
+  margin-top: 10%;
 }
 #cartsImage{
-  width: 30%!important;
-  height: 30%!important;
+  width: 11%!important;
+  margin-right: 7rem;
+  margin-left: 2rem;
+  /* height: 30%!important; */
   /* border-radius: 100%!important; */
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
+}
+.fa-solid.trash{
+  font-size: 1.5rem!important;
+  cursor: pointer;
 }
 #shopCards{
   /* width: 100%!important; */
   border: 1px solid green!important;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+#shopCards{
+    width: 100%!important;
+    display: flex;
+    flex-direction: row;
+}
+.card-title.price{
+  color: #F5722B!important;
+  font-size: 1rem;
+}
+.subTotalContainer,
+.totalContainer{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid red;
+  width: 100%!important;
+  margin-top: 2rem;
+}
+#voucherForm{
+  margin-top: 2rem;
+}
+#searchBtn{
+  width: 100%!important;
+  margin-top: 2rem;
+  background-color: #D0611E!important;
+  outline: none!important;
+  color: white;
+  border: none!important;
+}
+.orderSummaryHeading{
+  margin-right: auto;
+}
+#cardBodyVoucher{
+  margin-top: 2rem!important;
+}
+#selectCart{
+  cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-/* .show_2{
-  display: block!important;
-} */
+#leftcart{
+  max-height: 40rem!important;
+  overflow-y: auto;
+  border: 1px solid red;
+}
