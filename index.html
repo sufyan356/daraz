@@ -12,7 +12,7 @@
 
 
     <div class="container-wrapper">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
                     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -26,7 +26,7 @@
                            </form>
 
                            <!-- add to cart  -->
-                           <button type="button" class="btn  position-relative">
+                           <button type="button" class="btn  position-relative" id="cartID">
                             <i class="fa-solid fa-cart-shopping icons "></i>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id = "basketData">
                               0
@@ -34,7 +34,7 @@
                             </span>
                           </button>
 
-                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <button id="buttonTogglerID" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                           </button>
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -73,7 +73,7 @@
     </div>
     
     <div class="container-fluid" id="leftPart">
-        <div class="row">
+        <div class="row" id="firstHeaderPart">
             <div class="col-sm-3" id="categories">
                 <div class="tab">
                     
@@ -104,25 +104,25 @@
                     <div class="slideshow-container" id="slider-container-child">
             
                         <div class="mySlides fade">
-                            <img src="https://icms-image.slatic.net/images/ims-web/ba384e6d-482a-48d5-8465-9a79f5cdddf6.jpg" style="width:100%; height:60vh; object-fit: contain;">
+                            <img src="https://icms-image.slatic.net/images/ims-web/ba384e6d-482a-48d5-8465-9a79f5cdddf6.jpg" style="width:100%; height:50vh; object-fit: contain;" class="sliderImageID img-fluid">
                         </div>
                         
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/0d565820-6e9c-4ad2-96c2-769cf2b905b1.jpg" style="width:100%; height:60vh; object-fit: contain;">
+                          <img src="https://icms-image.slatic.net/images/ims-web/0d565820-6e9c-4ad2-96c2-769cf2b905b1.jpg" style="width:100%; height:50vh; object-fit: contain;" class="sliderImageID img-fluid">
                         </div>
                         
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/fef3ca74-ada4-4123-aed0-7d7e63366c5f.jpg" style="width:100%; height:60vh; object-fit: contain;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/fef3ca74-ada4-4123-aed0-7d7e63366c5f.jpg" style="width:100%; height:50vh; object-fit: contain;" class="sliderImageID img-fluid">
                         </div>
             
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/342fcdb8-9631-4244-ba3b-876fe9522c72.jpg" style="width:100%; height:60vh; object-fit: contain;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/342fcdb8-9631-4244-ba3b-876fe9522c72.jpg" style="width:100%; height:50vh; object-fit: contain;" class="sliderImageID img-fluid">
                         </div>
                         <div class="mySlides fade">
-                        <img src="	https://icms-image.slatic.net/images/ims-web/705c6840-125a-40c1-992d-99a13428fe02.png_1200x1200.jpg" style="width:100%; height:60vh; object-fit: contain;">
+                        <img src="	https://icms-image.slatic.net/images/ims-web/705c6840-125a-40c1-992d-99a13428fe02.png_1200x1200.jpg" style="width:100%; height:50vh; object-fit: contain;" class="sliderImageID" img-fluid>
                         </div>
                         <div class="mySlides fade">
-                        <img src="https://icms-image.slatic.net/images/ims-web/885fe378-9abb-4361-b489-134333646d0d.jpg" style="width:100%; height:60vh; object-fit: contain;">
+                        <img src="https://icms-image.slatic.net/images/ims-web/885fe378-9abb-4361-b489-134333646d0d.jpg" style="width:100%; height:50vh; object-fit: contain;" class="sliderImageID img-fluid">
                         </div>
                         
                         </div>
@@ -145,7 +145,7 @@
     <div class="container mt-5" id="rightPart">
         <div class="row">
             <div class="col">
-                <img src="https://blogpakistan.pk/wp-content/uploads/2022/12/35317112-d5a3-4e6e-aadf-54049041eddc_PK-1920-502-1-1024x268.jpg" alt="daraz-12 12 sale" style="width: 100%;">
+                <img id="daraz12" src="https://blogpakistan.pk/wp-content/uploads/2022/12/35317112-d5a3-4e6e-aadf-54049041eddc_PK-1920-502-1-1024x268.jpg" alt="daraz-12 12 sale" style="width: 100%;" class="img-fluid">
             </div>
         </div>
     </div>

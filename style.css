@@ -12,6 +12,11 @@
 #daraz-logo{
   height: 3rem!important;
 }
+@media(max-width:600px){
+  #daraz-logo{
+    height: 2rem!important;
+  }
+}
 #input-search{
   width: 20rem;
 }
@@ -27,13 +32,12 @@
 #signUp{
   color: white!important;
   cursor: pointer;
+  margin-right: 1rem 
 }
 
 #login:hover,
 #signUp:hover{
-  background-color:  white!important;
-  border-radius: 3rem;
-  color:  #F85606!important;
+  opacity: 0.8;
   
 }
 .nav-item{
@@ -46,6 +50,17 @@
   display: flex;
   justify-content: space-evenly;
 } 
+@media (min-width: 992px){
+  #ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* border: 1px solid white; */
+  } 
+  #login{
+    margin-right: 2rem;
+  }
+}
 
 /* sliders  */
 .mySlides {display: none;}
@@ -199,7 +214,12 @@ to {opacity: 1}
 }
 @media(max-width:767px){
   #input-search{
-      width: 13rem!important;
+      width: 10rem!important;
+  }
+}
+@media(max-width:280px){
+  #input-search{
+      width: 100%!important;
   }
 }
 @media(max-width:850px){
@@ -209,6 +229,22 @@ to {opacity: 1}
   #loader{
     width: 100%!important;
   }
+}
+@media(max-width:360px){
+  #cartID{
+    margin-top: 1rem!important;
+  }
+  
+}
+@media(max-width:500px){
+  .sliderImageID{
+    height: 40vh!important;
+   object-fit:fill!important;
+  }
+  #daraz12{
+    height: 10rem!important;
+  }
+  
 }
 
 .tab{
@@ -234,13 +270,13 @@ to {opacity: 1}
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 100%!important;
+  max-height: 100vh!important;
   box-shadow: none!important;
   border: 0rem!important;
  
 }
  #cardMini{
-  
+  margin-top: 120vh;
  }
 #productDetails{
   width: 70%;
@@ -483,7 +519,7 @@ to {opacity: 1}
 #shopCards{
   /* width: 100%!important; */
   border: 1px solid green!important;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 #shopCards{
     width: 100%!important;
@@ -524,7 +560,22 @@ to {opacity: 1}
 }
 
 #leftcart{
-  max-height: 40rem!important;
+  max-height: 85vh!important;
   overflow-y: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+#firstHeaderPart{
+  height: 50vh!important;
+}
+#categories{
+  height: 80%!important;
+}
+#slider-container-child {
+  height: 43vh !important;
+  /* border: 10px solid red; */
+}
+@media(max-width:499px){
+  #buttonTogglerID{
+    margin-top: 1rem;
+  }
 }
