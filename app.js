@@ -12,6 +12,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+let containerWrapper = document.querySelector(".container-wrapper")
+let leftPart = document.querySelector("#leftPart")
+let rightPart = document.querySelector("#rightPart")
+let cardsContainer = document.querySelector("#cardsContainer")
+let blurID = document.querySelectorAll("#blurID")
+let loader = document.querySelector(".loader")
+
 // slider 
 let slideIndex = 0;
 showSlides();
@@ -50,10 +57,10 @@ function openCity(evt) {
 }
 
 async function basket() {
+ 
   console.log("Basket Function Run!..");
   const basketData = document.querySelector("#basketData");
   const querySnapshot = await getDocs(collection(db, "Quantity"));
-
   const totalQuantity = querySnapshot.docs
     .map((doc) => doc.data().quantity)
     .reduce((accumulator, currentQuantity) => accumulator + currentQuantity, 0);
@@ -73,6 +80,7 @@ basketData.addEventListener("click" , productCarts);
 
 const apiData = async () => {
   try {
+  loader.classList.add("loaderShow");
   let productData = await fetch("https://fakestoreapi.com/products");
   let productResponse = await productData.json();
   let categoryData = await fetch("https://fakestoreapi.com/products/categories");
@@ -102,6 +110,12 @@ const apiData = async () => {
       
     } 
     productCards(updatedDoc.data());
+    loader.classList.add("hide");
+    const elements = [containerWrapper, leftPart, rightPart];
+    elements.forEach(element => {
+      element.classList.add("show");
+    });
+  
   });
 } 
 catch (error) {
@@ -180,7 +194,7 @@ const productCards = async (products) => {
       
     <div class="col-sm-4 " >
       <div class="card " style="width: 12rem; max-height: 15rem; margin-bottom:5rem; cursor:pointer;" id = "loadCard">
-        <div class="card-body p-5 ">
+        <div class="card-body p-5 " id = "blurID">
           <img src="${products.productData.image}" class="card-img-top" alt="ProductImage" id = "customImage">
             <h5 class="card-title" id = "customHeading">${products.productData.title}</h5>
             <p class="card-text">RS: ${products.productData.price}</p>

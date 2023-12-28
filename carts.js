@@ -10,13 +10,20 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+let loaderContainer = document.querySelector(".loader")
+let cartsProduct = document.querySelector("#cartsProduct")
+let cardMiniContainer = document.querySelector("#cardMiniContainer")
 
 window.DeleteFunction = async (productId , price) => {    // window.DeleteFunction  ( function run successfully )
     console.log("delete function run");
     try {
-        let total;const totalAmountSnapshot = await getDocs(collection(db, "totalAmount"));
+        // loaderContainer.classList.add("loaderShow");
+        cardMiniContainer.classList.add("opacityClass");
+       
+        let total;
+        const totalAmountSnapshot = await getDocs(collection(db, "totalAmount"));
         totalAmountSnapshot.forEach((ele) => {
-            total = (ele.data().total - price).toFixed(3)
+            total = (+total + (ele.data().total - price)).toFixed(3);
             console.log(total)
             
         })
@@ -142,9 +149,10 @@ window.ItemsSelected = async (event, price, quantity, productID) => {
 const updateTotalUI = async () => {
     let subTotalID = document.querySelector("#subTotalID");
     let totalID = document.querySelector("#totalID");
-    let totalAmount;
-    subTotalID.innerHTML = total;
-    totalID.innerHTML = total;
+    let totalAmount = total;
+    // console.log(typeof(total))
+    subTotalID.innerHTML = totalAmount;
+    totalID.innerHTML = totalAmount;
 };
 
 let setID;
@@ -191,6 +199,8 @@ const loader = async () => {
    
 
     await cardsData();
+        loaderContainer.classList.add("hide");
+        cartsProduct.classList.add("show");
         const selectedItemsCollection = collection(db, "totalAmount");
         const selectedItemsQuerySnapshot = await getDocs(selectedItemsCollection);
     
@@ -200,6 +210,7 @@ const loader = async () => {
 
         await checkedFunction();
         await updateTotalUI();
+        
 };
 
 window.addEventListener("DOMContentLoaded", loader);

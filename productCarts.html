@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
-    <div class="container">
+
+  <div class="loader" style="border: 1px solid red;" id="loaderContainer">
+    <img src="Spinner-5.gif" alt="loader" class="img-fluid">
+  </div>
+
+    <div class="container" id="cartsProduct">
         <div class="row"> 
             <div class="col-sm-6 shadow p-3 mb-5 bg-body rounded mt-5" id="leftcart">
                 <div class="card " style="width: 100%;" id="cardMiniContainer">
@@ -18,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 ">
+            <div class="col-sm-6 " id="summary">
                 <div class="card " style="width: 20rem; margin-left: auto;">
                     <div class="card-body shadow p-3 mb-5 bg-body rounded" id="cardBodyVoucher">
                       <h5 class="card-title orderSummaryHeading">Order Summary</h5>

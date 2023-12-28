@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
+  <div class="loader" style="border: 1px solid red;" id="loaderContainer">
+    <img src="Spinner-5.gif" alt="loader" class="img-fluid">
+  </div>
+
     <div class="container-wrapper">
         <div class="container">
             <div class="row">
@@ -61,37 +66,39 @@
     </div>
 
     <div class="container">
+      <div class="producrDetails">
         <div class="row">
-            <div class="col-sm-6" style="border: 1px solid red; margin-top: 3rem; height: 70vh;">
-                <img  alt="image-photo" id="imagePhoto" class="img-fluid">
-            </div>
+          <div class="col-sm-6" style="border: 1px solid red; margin-top: 3rem; height: 70vh;" id="imagePhotoContainer">
+              <img  alt="image-photo" id="imagePhoto" class="img-fluid">
+          </div>
 
-            <div class="col-sm-6" style="border: 1px solid red; margin-top: 3rem; height: 70vh;" >
-                <p id="productTitle"> </p>
-                <p id="productDes"> </p>
-                <div class="quantityBox">
-                    <div class="quantityText">
-                        <!-- <p id="Quantity"> Quantity</p> -->
-                    </div>
+          <div class="col-sm-6" style="border: 1px solid red; margin-top: 3rem; height: 70vh;" id="productsDetail" >
+              <p id="productTitle"> </p>
+              <p id="productDes"> </p>
+              <div class="quantityBox">
+                  <div class="quantityText">
+                  </div>
+                  
+                  <div class="updateQuantity">
                     
-                    <div class="updateQuantity">
-                      
-                    </div>
-                    
-                </div>
-                <div class="buttonGrp">
-                    <button type="submit" class="btn btn-primary " id = "Buy_Now">Buy Now</button>
-                    <!-- <button type="submit" class="btn btn-primary " id = "Add_To_Cart">Add To Cart</button> -->
-                </div>
-                
-            </div>
-            <!-- <div class="col-sm-6">
-                <button type="submit" class="btn btn-primary">Buy Now</button>
-            </div>
-            <div class="col-sm-6">
-                <button type="submit" class="btn btn-primary">Add To Cart</button>
-            </div> -->
-        </div>
+                  </div>
+                  
+              </div>
+              <div class="buttonGrp">
+                  <button type="submit" class="btn btn-primary " id = "Buy_Now">Buy Now</button>
+                  <!-- <button type="submit" class="btn btn-primary " id = "Add_To_Cart">Add To Cart</button> -->
+              </div>
+              
+          </div>
+          <!-- <div class="col-sm-6">
+              <button type="submit" class="btn btn-primary">Buy Now</button>
+          </div>
+          <div class="col-sm-6">
+              <button type="submit" class="btn btn-primary">Add To Cart</button>
+          </div> -->
+      </div>
+      </div>
+       
     </div>
 
     <div class="container">

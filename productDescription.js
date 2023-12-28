@@ -13,16 +13,15 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+let loader = document.querySelector(".loader")
+let producrDetails = document.querySelector(".producrDetails")
 function getData(){
+  loader.classList.add("loaderShow");
+  producrDetails.classList.add("hide");
+
   setTimeout( async() => {
-
-    // const querySnapshot = await getDocs(collection(db, "Products"));
-    // querySnapshot.docs.forEach((ele) => {
-    //   productID = ele.data().productData.id
       showProducts();
-    // })
-
-   
   },3000)
 }
 
@@ -59,6 +58,9 @@ const showProducts = async () => {
   let quantityBox = document.querySelector(".quantityBox")
   let buttonGrp = document.querySelector(".buttonGrp")
   let updateQuantity = document.querySelector(".updateQuantity")
+  let containerWrapper = document.querySelector(".container-wrapper")
+
+
 
   const docRef = await getDocs(collection(db, "productDetails"));
   docRef.docs.forEach(element => {
@@ -67,6 +69,9 @@ const showProducts = async () => {
 
   try{
     const querySnapshot = await getDocs(collection(db, "Products"));
+    loader.classList.add("hide");
+    producrDetails.classList.remove("hide");
+
     querySnapshot.docs.filter((data) => {
       
       if(data.id == productID){
@@ -78,6 +83,7 @@ const showProducts = async () => {
         productTitle.innerHTML = `${data.data().productData.title}`
         productDes.innerHTML = `${data.data().productData.description}`
       }
+      
       
        
     })
