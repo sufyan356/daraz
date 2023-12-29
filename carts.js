@@ -1,13 +1,22 @@
 import { initializeApp }  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore , doc  ,collection, addDoc , getDocs , getDoc , updateDoc , onSnapshot , deleteDoc   } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
+//   authDomain: "e-commerece-d1da6.firebaseapp.com",
+//   projectId: "e-commerece-d1da6",
+//   storageBucket: "e-commerece-d1da6.appspot.com",
+//   messagingSenderId: "441885728322",
+//   appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
-  authDomain: "e-commerece-d1da6.firebaseapp.com",
-  projectId: "e-commerece-d1da6",
-  storageBucket: "e-commerece-d1da6.appspot.com",
-  messagingSenderId: "441885728322",
-  appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
-};
+    apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
+    authDomain: "e-commerece-d1da6.firebaseapp.com",
+    projectId: "e-commerece-d1da6",
+    storageBucket: "e-commerece-d1da6.appspot.com",
+    messagingSenderId: "441885728322",
+    appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
+  };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 let loaderContainer = document.querySelector(".loader")

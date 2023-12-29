@@ -718,3 +718,81 @@ to {opacity: 1}
 .hide{
   display: none!important;
 }
+
+
+/* FORM CSS  */
+#formContainer{
+  /* border: 1px solid red; */
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+  height: 100vh!important;
+  background-color: #EFF0F5!important;
+}
+.containerChild{
+  /* border: 1px solid grey; */
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#signUpBtn{
+  width: 100%!important;
+  background-color: #F85606!important;
+  border: none!important;
+  box-shadow: none!important;
+}
+#signUpBtn:hover{
+  background-color: #e98351!important;
+}
+#GoogleBtn{
+  width: 45%!important;
+  background-color: #D34836!important;
+  border: none!important;
+  box-shadow: none!important;
+  margin-top: 1rem;
+}
+#fbBtn{
+  width: 45%!important;
+  background-color: #3B5998!important;
+  border: none!important;
+  box-shadow: none!important;
+  margin-top: 1rem;
+}
+#passwordSeeID{
+    display: flex!important;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   /* border: 1px solid red; */
+   /* width: 110%!important; */
+}
+.fa-solid.eye{
+  margin-left: -2rem!important;
+}
+#socialMediaBtn{
+  /* border: 1px solid red; */
+  display: flex!important;
+  justify-content: space-around;
+  align-items: center;
+}
+#accountInfo{
+  display: flex!important;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#loginLink{
+ color: #1AA7CD!important;
+ cursor: pointer;
+}
+
+/* LOGIN CSS  */
+#loginBtn{
+  width: 100%!important;
+  background-color: #F85606!important;
+  border: none!important;
+  box-shadow: none!important;
+}
+#loginBtn:hover{
+  background-color: #e98351!important;
+  /* opacity: 0.8; */
+ }
