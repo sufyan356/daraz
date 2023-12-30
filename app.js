@@ -1,13 +1,7 @@
 import { initializeApp }  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore , doc  ,collection, addDoc , getDocs , getDoc , updateDoc , onSnapshot   } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
-//   authDomain: "e-commerece-d1da6.firebaseapp.com",
-//   projectId: "e-commerece-d1da6",
-//   storageBucket: "e-commerece-d1da6.appspot.com",
-//   messagingSenderId: "441885728322",
-//   appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
-// };
+import { getStorage, ref, uploadBytesResumable, getDownloadURL  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+import { getAuth, onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 const firebaseConfig = {
   apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
   authDomain: "e-commerece-d1da6.firebaseapp.com",
@@ -16,6 +10,14 @@ const firebaseConfig = {
   messagingSenderId: "441885728322",
   appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
+//   authDomain: "e-commerece-d1da6.firebaseapp.com",
+//   projectId: "e-commerece-d1da6",
+//   storageBucket: "e-commerece-d1da6.appspot.com",
+//   messagingSenderId: "441885728322",
+//   appId: "1:441885728322:web:a8c5cd02a60335fc0697db"
+// };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -65,7 +67,13 @@ function openCity(evt) {
 }
 
 async function basket() {
- 
+
+  // if(firebase.auth().currentUser.photoURL){
+  //   console.log("HAN KIA HAI BHAI!.")
+  //   const imgges = document.querySelector("#imgges");
+  //   imgges.src = firebase.auth().currentUser.photoURL;
+  // }
+
   console.log("Basket Function Run!..");
   const basketData = document.querySelector("#basketData");
   const querySnapshot = await getDocs(collection(db, "Quantity"));

@@ -11,7 +11,7 @@
 <body>
   
     <div class="container-fluid" id="formContainer">
-        <div class="containerChild">
+        <div class="containerChild mt-5">
             <div class="row">
                
                 <div class="col-sm-12">
@@ -19,7 +19,7 @@
                     <div id="accountInfo">
                         <small>Already member? <span id="loginLink">Login here.</span> </small>
                     </div>
-                    <form class="shadow p-3 mb-5 bg-body rounded">
+                    <form class="shadow p-3 mb-5 bg-body rounded" id="signUpForm">
                         <div class="mb-3">
                             <label for="exampleInputName1" class="form-label">Name: </label>
                             <input type="text" class="form-control" id="exampleInputName1">
@@ -39,10 +39,13 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02" accept="image/*">
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                            <input type="file" class="form-control" id="inputGroupFile02" style="padding: 0rem!important;" required>
+                            <button class="btn-primary"  id="uploadBtn" type="button">Upload</button>
+                            <!-- <label class="input-group-text" for="inputGroupFile02" id="abcdef">Upload</label> -->
                         </div>
-                           
+
+                        <img src="" id="img">
+                        
                         <button type="submit" class="btn btn-primary" id="signUpBtn">Sign Up</button>
                         <div id="socialMediaBtn">
                             <button type="submit" class="btn btn-primary" id="GoogleBtn"><i class="fa-brands fa-google"></i> Google</button>
