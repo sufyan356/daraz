@@ -66,6 +66,7 @@ function openCity(evt) {
   console.log(JSON.parse(categoryName) );
 }
 
+
 async function basket() {
 
   // if(firebase.auth().currentUser.photoURL){

@@ -1,8 +1,7 @@
-// import firebase from "https://www.gstatic.com/firebasejs/10.7.1/firebase-compat.js";; // Import core Firebase namespace
-// import firebase from "firebase/compat/app"; // Import core Firebase namespace
+
 import { initializeApp }  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
-import { getAuth, onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword , signInWithPopup, GoogleAuthProvider     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore , collection, addDoc , updateDoc   } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyDnL1QO4hHQbdr_-iqjVRbNgGOUQb8lSjw",
@@ -17,6 +16,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 const storage = getStorage();
+const provider = new GoogleAuthProvider();
+
 
 // SIGN UP FUNCTION: 
 let signUpBtn  = document.querySelector("#signUpBtn");
@@ -27,6 +28,7 @@ if(signUpBtn){
     let signUpUserName  = document.querySelector("#exampleInputName1").value;
     let signUpEmail  = document.querySelector("#exampleInputEmail1").value;
     let signUpPassword  = document.querySelector("#exampleInputPassword1").value;
+    let inputGroupFile02  = document.querySelector("#inputGroupFile02").value;
     const file = document.querySelector("#inputGroupFile02");
     if(!signUpUserName){
       alert("PLEASE FILL NAME FIELD!..")
@@ -41,12 +43,14 @@ if(signUpBtn){
     else{
       createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
       .then( async (userCredential) => {
+        const image = localStorage.getItem("Image");
         let docRef;
         const user = userCredential.user;
           docRef = await addDoc(collection(db, "usersInfo"), {
           signUpUserName,
           signUpEmail,
-          signUpPassword
+          signUpPassword,
+          image
         });
 
         await updateDoc(docRef, { docId: docRef.id });
@@ -65,6 +69,28 @@ if(signUpBtn){
   }
   signUpBtn.addEventListener("click" , signUp)
 }
+
+// SIGN IN WITH GOOGLE
+// const GoogleBtn = document.querySelector("#GoogleBtn");
+// GoogleBtn.addEventListener("click" , () => {
+//   signInWithPopup(auth, provider)
+//   .then((result) => {
+//     const credential = GoogleAuthProvider.credentialFromResult(result);
+//     const token = credential.accessToken;
+//     const user = result.user;
+//     console.log("user => " , user);
+//     window.location.href = 'index.html'
+//   }).catch((error) => {
+
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     const email = error.customData.email;
+//     console.log(errorCode)
+//     console.log(errorMessage)
+//     const credential = GoogleAuthProvider.credentialFromError(error);
+//   });
+// })
+
 
 // SIGN IN FUNCTION: 
 let loginBtn = document.querySelector("#loginBtn");
@@ -92,15 +118,17 @@ if(loginBtn){
   loginBtn.addEventListener("click" , login) 
 }
 
+
+////////////////////////////////////////////////////////////////////
 const uploadToStorage = async (file) => {
 // const file = document.querySelector("#inputGroupFile02") 
-const user = await getAuth().currentUser;
-const uid = user.uid;
-console.log(uid)
+// const user = await getAuth().currentUser;
+// const uid = user.uid;
+// console.log(uid)
 
 return new Promise((resolve , reject) => {
   const fileName = file.name;
-  const storageRef = ref(storage, `users/${uid}`);
+  const storageRef = ref(storage, `users/12kj45iu76yt`);
   const uploadTask = uploadBytesResumable(storageRef, file);
   uploadTask.on('state_changed', 
     (snapshot) => {
@@ -141,6 +169,9 @@ const uploadFile = async () => {
   console.log("url: " + url);
   console.log(typeof(url));
 
+  localStorage.setItem("Image" ,(url));
+  
+
 //   const imageSnapShot = await addDoc(collection(db, "SelectedItems"), {
 //     total,
 //     productID,
@@ -166,10 +197,12 @@ if (uploadBtn) {
     if(imageTarget){
       imageTarget.src = URL.createObjectURL(e.target.files[0])
     }
-
-   
   })
  }
+ ////////////////////////////////////////////////////////////////////
+
+
+   
 
 
 // redirectTo Login Form 
@@ -187,7 +220,5 @@ if(signUpLink){
     window.location.href = 'signUp.html'
   })
 }
-
-
 
 

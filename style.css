@@ -741,11 +741,14 @@ margin-right: auto;
   border-radius: 1rem;
 }
 #signUpBtn{
-  width: 100%!important;
-  background-color: #F85606!important;
-  border: none!important;
-  box-shadow: none!important;
-  margin-top: 3rem;
+  width: 50%!important;
+    background-color: #F85606!important;
+    border: none!important;
+    box-shadow: none!important;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
 }
 #signUpBtn:hover{
   background-color: #e98351!important;
@@ -827,7 +830,7 @@ margin-right: auto;
     cursor: pointer;
    }
    #signUpForm{
-    width: 100%!important;
+    /* width: 100%!important; */
     margin-left: auto;
     margin-right: auto;
     }
